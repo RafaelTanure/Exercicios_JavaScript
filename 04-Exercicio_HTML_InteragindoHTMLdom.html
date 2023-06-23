@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados com JS</title>
+    <style>
+        body { font: 12pt Arial; }
+        button { font-size: 12pt; padding: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Dados v2.0</h1>
+    <button onclick="inicio()">Clique para começar</button>
+    <section id="resultado">
+        <p>Aqui vai aparecer o resultado... </p>
+    </section>
+    <script>
+        function inicio() { // criei uma função inicio  
+            let nome = window.prompt('Qual é o seu nome?') // Windowm.prompt recebe uma string  que sera exibida em forma de pergunta ao usúario
+            let resposta = window.document.getElementById('resultado')  // permite obter um elemento do documento a partir de seu atributo ID especificado.
+            resposta.innerHTML = `<p>Olá, <strong>${nome}</strong>! É um grande prazer te conhecer!` // Aqui utilizei o strong para escreve o que foi digitado pelo usuario em negrito
+        }
+    </script>
+</body>
+</html>
