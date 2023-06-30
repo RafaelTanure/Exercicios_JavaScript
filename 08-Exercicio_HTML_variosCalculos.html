@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varios Calculos em JS</title>
+</head>
+
+<body>
+    <p>Varios Calculos em Js</p>
+    <!--Utilizamos o onclick para pegar  o click -->
+    <button onclick="calculo()">Clique para calcular</button>
+    <section id="informarValores">
+        <!--Utilizamos o id informar Valores para passar os valores digitados pelo usúario-->
+        <p>Aqui está seu resultado!!!!!</p>
+    </section>
+</body>
+
+</html>
+<script>
+    function calculo() {
+        let num = Number(window.prompt('Digite um número: '))
+        //Document.querySelector() Retorna o primeiro elemento dentro do documento (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) que corresponde ao grupo especificado de seletores.
+        let resposta = document.querySelector('section#informarValores')
+        resposta.innerHTML = `<p>Atenção o numero analisado é: <strong>${num}</strong></p><hr>`
+        resposta.innerHTML += `<p>O seu valor absoluto é ${Math.abs(num)}</p>` //A Math. abs() função retorna o valor absoluto de um número.
+        resposta.innerHTML += `<p>A sua parte inteira é ${Math.trunc(num)}</p>` //O método Math. trunc() retorna a parte inteira de um número, descartando suas casas decimais
+        resposta.innerHTML += `<p>O valor inteiro mais próximo é ${Math.round(num)}</p>`//A função Math. round() retorna o valor de um número arredondado para o inteiro mais proximo.
+        resposta.innerHTML += `<p>A sua raiz quadrada é ${Math.sqrt(num)}</p>` //A função Math. sqrt() retorna a raiz quadrada de um número ( x ) .
+        resposta.innerHTML += `<p>A sua raiz cúbica é ${Math.cbrt(num)}</p>`//Porque cbrt() é um método estático de Math , você sempre irá utilizar como Math. cbrt() , ao invés de um método de um objeto Math que você tenha criado ( Math não é um construtor).  
+        resposta.innerHTML += `<p>O valor de ${num}<sup>2</sup> é ${Math.pow(num, 2)}</p>`//A função Math. pow() retorna a base elevada ao expoente power, ou seja, baseexpoente 
+        resposta.innerHTML += `<p>O valor de ${num}<sup>3</sup> é ${Math.pow(num, 3)}</p>`
+    }
+</script>
