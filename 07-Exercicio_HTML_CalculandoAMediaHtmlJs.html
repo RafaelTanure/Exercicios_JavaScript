@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros com JS </title>
+</head>
+
+<body>
+    <p>Media do aluno V 1.0 </p>
+    <button onclick="media()">Calcular Média</button>
+    <p id="informarTela"></p>
+</body>
+<script src="../07-ExercicioNumeroscomJS/index.js"></script>
+
+</html>
+
+<script>
+    function media() {
+        let nome = window.prompt('Qual é o nome do Aluno ?');
+        let numeroA = window.prompt('Qual foi a primeira nota?');
+        let numeroB = window.prompt('Informe a segunda nota ?');
+        let resultado = (Number.parseInt(numeroA) + Number.parseInt(numeroB)) / 2;
+        console.log(resultado);
+  
+        let res = document.getElementById('informarTela')
+            res.innerHTML = `<p>///ATENÇÃO CALCULANDO A MEDIA FINAL DE: <mark>${nome}</mark>.////</p>`
+            res.innerHTML += `<p>As notas passadas foram :<mark>${numeroA} e${numeroB}</mark>.</p>` // O += é necessário, para manter a frase anterior, e assim adicionando essa outra frase". Se não fosse ele, a linha anterior seria apagada.
+            res.innerHTML += `<p>Aqui está sua a media: <mark>${resultado}</mark>.</p>`
+    }
+</script>
